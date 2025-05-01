@@ -1,17 +1,14 @@
 import streamlit as st
-import httpx
-# run  streamlit run Home.py in the terminal
+import pandas as pd
 
-def healthcheck(): #Make sure the server works
-    response = httpx.get("http://127.0.0.1:8000/health")
-    return response.is_success
-
-st.set_page_config("Home", page_icon="static/favicon-32x32.png") # configure page with link title and icon 
+# Configura la pagina
+st.set_page_config("Home", page_icon="static/favicon-32x32.png")
 st.logo("static/uniupo-logo.svg", size="large")
 
-# Aggiungi un logo o un'immagine di copertura nella pagina
+# Immagine di copertura
 st.image("static/home_image.jpg", use_container_width=True)
 
+# Titolo
 st.title("Home")
 
 # Descrizione del sito
@@ -25,7 +22,9 @@ Welcome! This website offers you the possibility to:
 The goal is to provide you with a simple and functional interface for customising your wallet, combining traditional assets and cryptocurrencies.
 """)
 
-if healthcheck():
-    st.success("Service is up and running")
-else:
-    st.error("Service unavailable")
+# Verifica se il file dati è disponibile (come "healthcheck")
+try:
+    df = pd.read_csv("static/data.csv")
+    st.success("Data file loaded successfully. Service is up and running.")
+except Exception as e:
+    st.error("Service unavailable: failed to load data file.")
