@@ -21,7 +21,7 @@ This project provides a cryptocurrency portfolio dashboard built using Streamlit
 
 **Installation**
 - Copy this repository:
-  git clone https://github.com/yourusername/crypto-dashboard.git
+  git clone https://github.com/Nina-star13/crypto-dashboard](https://github.com/Nina-star13/Nina-star13-Portfolioconstruction_LauriaDamato).git
   cd crypto-dashboard
 
 - Install the required dependencies:
