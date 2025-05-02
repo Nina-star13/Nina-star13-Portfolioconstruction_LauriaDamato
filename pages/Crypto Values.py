@@ -17,7 +17,7 @@ crypto_df.columns = ["Bitcoin (BTC)", "Ethereum (ETH)"]
 
 # Controllo presenza dati
 if crypto_df.dropna().empty:
-    st.warning("⚠️ No crypto data available in data.csv.")
+    st.warning("No crypto data available in data.csv.")
 else:
     # Visualizzazione dei dati in tabella
     st.subheader("Price table")
@@ -42,9 +42,3 @@ else:
         file_name="crypto_data.csv",
         mime="text/csv"
     )
-
-
-except Exception as e:
-    st.error(f"An error occurred while downloading data: {e}")
-
-
